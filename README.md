@@ -104,8 +104,8 @@ Browser → Next.js API Route (/api/prompts) → Express Backend → MongoDB
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/iamdainwi/prompt-library.git
-cd prompt-library
+git clone https://github.com/Priya-gawhane/prompt-library-main.git
+cd prompt-library-main
 ```
 
 ### 2. Environment Setup
