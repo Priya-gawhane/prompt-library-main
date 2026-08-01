@@ -4,6 +4,7 @@ import dotenv from "dotenv"
 import cors from "cors"
 import helmet from "helmet"
 import morgan from "morgan"
+import mongoose from "mongoose"
 
 import connectDb from "./config/database"
 import promptRoutes from "./routes/prompt.routes"
@@ -26,14 +27,31 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
 app.get("/", (req: Request, res: Response) => {
-  res.json({ message: "Hello from prompt-library server!" })
+  const dbStateMap: Record<number, string> = {
+    0: "disconnected",
+    1: "connected",
+    2: "connecting",
+    3: "disconnecting",
+  }
+  const dbState = mongoose.connection.readyState
+  res.json({
+    message: "Hello from prompt-library server!",
+    database: {
+      status: dbStateMap[dbState] ?? "unknown",
+      readyState: dbState,
+    },
+  })
 })
 
 app.use("/api/prompts", promptRoutes)
 
-const PORT = process.env.PORT || 3001
+connectDb()
 
-app.listen(PORT, () => {
-  connectDb()
-  console.log(`server is running on http://localhost:${PORT}`)
-})
+if (process.env.NODE_ENV !== "production") {
+  const PORT = process.env.PORT || 3001
+  app.listen(PORT, () => {
+    console.log(`server is running on http://localhost:${PORT}`)
+  })
+}
+
+export default app
