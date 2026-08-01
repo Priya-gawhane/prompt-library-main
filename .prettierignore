@@ -1,0 +1,32 @@
+# Build outputs
+client/dist/
+client/.next/
+client/out/
+server/dist/
+
+# Dependencies
+client/node_modules/
+server/node_modules/
+node_modules/
+
+# Cache / tooling
+client/.turbo/
+client/.swc/
+server/.turbo/
+
+# Test coverage
+client/coverage/
+server/coverage/
+
+# Lock files (not formatted by prettier)
+client/pnpm-lock.yaml
+server/pnpm-lock.yaml
+pnpm-lock.yaml
+*.lock
+
+# Generated / compiled
+*.d.ts
+*.tsbuildinfo
+
+# Misc
+.DS_Store
