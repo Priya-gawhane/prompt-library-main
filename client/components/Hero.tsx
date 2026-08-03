@@ -60,7 +60,7 @@ export function Hero() {
               Enter Dashboard <ArrowRight className="w-4 h-4" />
             </Button>
           </Link>
-          <a href="https://github.com/dainwi/prompt-library" target="_blank" rel="noopener noreferrer">
+          <a href="https://github.com/Priya-gawhane/prompt-library-main.git" target="_blank" rel="noopener noreferrer">
             <Button size="lg" variant="outline" className="rounded-full px-8 text-base w-full sm:w-auto h-12">
               View Source
             </Button>

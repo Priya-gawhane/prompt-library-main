@@ -15,7 +15,7 @@ export function Footer() {
             Dashboard
           </Link>
           <a
-            href="https://github.com/dainwi/prompt-library"
+            href="https://github.com/Priya-gawhane/prompt-library-main.git"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-foreground transition-colors"
